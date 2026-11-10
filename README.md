@@ -196,13 +196,13 @@ Stores weather and air quality metrics.
 
 ### KPI Dashboard
 
-visualizations/dashboard_overview.png
+![KPI Dashboard](visualizations/dashboard_overview.png)
 
 ---
 
 ### Weather & Air Quality Analysis
 
-visualizations/dashboard_charts.png
+![Weather & Air Quality Analysis](visualizations/dashboard_charts.png)
 
 ---
 
