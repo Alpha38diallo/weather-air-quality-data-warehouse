@@ -14,6 +14,7 @@ query = """
 SELECT
     dc.city,
     dc.country,
+    dd.datetime,
     fw.temperature,
     fw.humidity,
     fw.pressure,
@@ -24,11 +25,20 @@ SELECT
 FROM fact_weather fw
 JOIN dim_city dc
 ON fw.city_id = dc.city_id
+JOIN dim_date dd
+ON fw.date_id = dd.date_id
 """
 
 df = pd.read_sql(query, conn)
 
+last_update = df["datetime"].max()
+
 st.title("🌍 Weather & Air Quality Dashboard")
+last_update = pd.to_datetime(df["datetime"]).max()
+
+st.caption(
+    f"📅 Dernière mise à jour des données : {last_update.strftime('%Y-%m-%d %H:%M')}"
+)
 
 # KPI
 
